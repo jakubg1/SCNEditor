@@ -20,14 +20,14 @@ fixed_flags/use_point_size = false
 fixed_flags/discard_alpha = false
 fixed_flags/use_xy_normalmap = false
 params/diffuse = Color( 0, 0.752941, 0, 1 )
-params/specular = Color( 0, 0, 0, 1 )
+params/specular = Color( 0.501961, 0.501961, 0.501961, 1 )
 params/emission = Color( 0, 0, 0, 1 )
 params/specular_exp = 40
 params/detail_mix = 1.0
 params/normal_depth = 1
 params/shader = 0
 params/shader_param = 0.5
-params/glow = 0
+params/glow = 1.0
 params/point_size = 1.0
 uv_xform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 textures/diffuse_tc = 0
@@ -46,7 +46,7 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 [node name="Camera" type="Camera" parent="."]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( -0.52254, 0, -0.852615, 0, 1, 0, 0.852615, 0, -0.52254, -1.97929, 0, -2.77982 )
+transform/local = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0 )
 projection = 0
 fov = 51.2697
 near = 0.1
@@ -61,5 +61,29 @@ v_offset = 0.0
 [node name="Triangle" parent="." instance=ExtResource( 1 )]
 
 geometry/material_override = SubResource( 1 )
+
+[node name="Light" type="DirectionalLight" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 15, 0 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 1.0
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.05
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+shadow/mode = 0
+shadow/max_distance = 2000.0
+shadow/split_weight = 0.5
+shadow/zoffset_scale = 2.0
 
 
